@@ -9,7 +9,7 @@
 
 Inspired by ADAPT [[Paper]](https://openreview.net/pdf?id=WDZg4P97gr) and OmniSat [[Paper]](https://arxiv.org/pdf/2404.08351)
 
-<img width="1049" alt="Screenshot 2024-02-07 at 11 02 58" src="https://github.com/jumdc/ADAPT/assets/62952163/15fb6500-94b5-4237-94d5-0670a1b4b8d7">
+<img width="1049" alt="Screenshot 2024-02-07 at 11 02 58" src="pic/architecture.jpg">
 
 
 # Project Structure
@@ -58,20 +58,11 @@ Inspired by ADAPT [[Paper]](https://openreview.net/pdf?id=WDZg4P97gr) and OmniSa
 - Dependencies apart from `pytorch` may be install with the `pip isntall -r requirements.txt`.
 
 ## Prepare the data
-- For the dataset, $\texttt{StressID}$ information and data request can be found [here](https://project.inria.fr/stressid/).
-- Put the data in a directory called "StressID"
+- For the dataset, $\texttt{TreeSAT-AI}$ information and data request can be found [here](https://huggingface.co/datasets/IGNF/TreeSatAI-Time-Series).
+- Put the data in a directory called "misc/TreeSat"
 - Change the path in the cfg/paths/directories.yaml
-- Extract the features from the videos. 
 
 
-1. Training video features (using a sliding window)
-```bash
-python src/utils/preprocessing/video_features.py name=StressID_Dataset/train_video_features.txt
-```
-2. Testing video features (no sliding window)
-```bash
-python src/utils/preprocessing/video_features.py name=StressID_Dataset/test_video_features.txt  dataset.video.window=null dataset.hyperparams.batch_size=1 dataset.video.step=null
-```
 
 ## Train ADAPT
 

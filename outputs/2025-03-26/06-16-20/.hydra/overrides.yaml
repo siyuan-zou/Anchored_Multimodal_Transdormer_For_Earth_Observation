@@ -1,4 +1,0 @@
-- classification_partition=1.0
-- logger.name=100E_patch_10_avg_anchor-s2
-- load_checkpoint=False
-- model.encoders.aerial.patch_size=5
