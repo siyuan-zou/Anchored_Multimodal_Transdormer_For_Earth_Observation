@@ -7,8 +7,7 @@
 <a href="https://hydra.cc/"><img alt="Config: Hydra 1.3" src="https://img.shields.io/badge/Config-Hydra-89b8cd"></a>
 </div>
 
-Implementation of ADAPT @ MIDL 2024  [[Paper]](https://openreview.net/pdf?id=WDZg4P97gr) [[Project Page]](https://jumdc.github.io/adapt/)
-
+Inspired by ADAPT [[Paper]](https://openreview.net/pdf?id=WDZg4P97gr) and OmniSat [[Paper]](https://arxiv.org/pdf/2404.08351)
 
 <img width="1049" alt="Screenshot 2024-02-07 at 11 02 58" src="https://github.com/jumdc/ADAPT/assets/62952163/15fb6500-94b5-4237-94d5-0670a1b4b8d7">
 
