@@ -1,6 +1,6 @@
 
 <div align="center">
-<h1>ADAPT: Anchored Multimodal Physiological Transformer</h1>
+<h1> Anchored Multimodal Transformer For Earth Observation</h1>
 <a href="https://www.python.org/"><img alt="PyTorch" src="https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=fff"></a>
 <a href="https://pytorch.org/get-started/locally/"><img alt="PyTorch" src="https://img.shields.io/badge/PyTorch-ee4c2c?logo=pytorch&logoColor=white"></a>
 <a href="https://pytorchlightning.ai/"><img alt="Lightning" src="https://img.shields.io/badge/-Lightning-792ee5?logo=pytorchlightning&logoColor=white"></a>
