@@ -1,0 +1,53 @@
+defaults: 
+  - _self_
+  - multimodal: TreeSat
+  - model: adapt_TS
+  - machine: gpu
+  - paths: TreeSat
+
+model:
+  encoders:
+    aerial:
+      patch_size: 10
+    
+
+trainer:
+  _target_: pytorch_lightning.Trainer
+  val_check_interval: 1.0
+  devices: ${machine.devices}
+  accelerator: ${machine.accelerator}
+  # strategy: ${machine.strategy}
+  gradient_clip_val: 1
+  log_every_n_steps: 1000
+  num_nodes: ${machine.num_nodes}
+  precision: ${machine.precision}
+
+logger: 
+  _target_: pytorch_lightning.loggers.WandbLogger
+  mode: "online"
+  project: adapt
+  save_dir: ${paths.logs}/wandb
+  name: 100E_drop_aerial_pretrain_avg_anchor-s2
+  
+  log_model: True
+
+seed: 1999
+classification_partition: 1
+max_epochs: 100
+projection_method: "pooling"
+pooling_method: "avg"
+anchor: "s2"
+
+test: True
+log: True
+checkpoints: True
+anchoring: False
+contrastive: False
+clf: True
+
+load_checkpoint: False
+path_cpt: ./misc/checkpoints/adapt_TS/contrastive/last-v9.ckpt
+
+
+cv: 1
+grid: {}

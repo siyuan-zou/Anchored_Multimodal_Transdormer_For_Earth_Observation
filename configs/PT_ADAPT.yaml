@@ -1,0 +1,47 @@
+defaults: 
+  - _self_
+  - multimodal: Pastis
+  - model: adapt_PT
+  - machine: gpu
+  - paths: Pastis
+
+trainer:
+  _target_: pytorch_lightning.Trainer
+  val_check_interval: 1.0
+  devices: ${machine.devices}
+  accelerator: ${machine.accelerator}
+  # strategy: ${machine.strategy}
+  gradient_clip_val: 1
+  log_every_n_steps: 1000
+  num_nodes: ${machine.num_nodes}
+  precision: ${machine.precision}
+
+logger: 
+  _target_: pytorch_lightning.loggers.WandbLogger
+  mode: "online"
+  project: adapt
+  save_dir: ${paths.logs}/wandb
+  name: 100E_avg_anchor-s2
+  
+  log_model: True
+
+seed: 1999
+classification_partition: 1.0
+max_epochs: 1
+projection_method: "pooling"
+pooling_method: "avg"
+anchor: "s2"
+
+test: True
+log: True
+checkpoints: True
+anchoring: True
+contrastive: True
+clf: True
+
+load_checkpoint: False
+path_cpt: .
+
+
+cv: 1
+grid: {}

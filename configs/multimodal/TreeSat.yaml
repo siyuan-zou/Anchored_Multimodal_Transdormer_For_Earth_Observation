@@ -1,0 +1,37 @@
+path_labels: StressID_Dataset/labels_modalities.csv
+
+modalities: ["aerial", "s2", "s1-asc"]
+hyperparams: {"batch_size":32,"num_workers":5,"sliding_window":True}
+keep_missing: True
+
+classification_partition: ${classification_partition}
+partition: 1.0
+mono_strict: False
+
+train_transform:
+ - p: 0.0
+ - size: 300
+
+val_transform:
+ - p: 0.0
+ - size: 300
+
+test_transform:
+ - p: 0.0
+ - size: 300
+
+classes: ["Abies",
+            "Acer",
+            "Alnus",
+            "Betula",
+            "Cleared",
+            "Fagus",
+            "Fraxinus",
+            "Larix",
+            "Picea",
+            "Pinus",
+            "Populus",
+            "Prunus",
+            "Pseudotsuga",
+            "Quercus",
+            "Tilia"]

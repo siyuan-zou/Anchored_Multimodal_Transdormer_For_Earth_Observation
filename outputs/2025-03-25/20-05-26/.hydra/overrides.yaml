@@ -1,0 +1,4 @@
+- multimodal.modalities=["aerial", "s1-asc"]
+- classification_partition=1.0
+- logger.name=100E_drop_s2_pretrain_avg_anchor-s2
+- path_cpt=./misc/checkpoints/adapt_TS/contrastive/last-v9.ckpt

@@ -1,0 +1,58 @@
+path_labels: 
+
+modalities: ["aerial", "s2", "s1-asc"]
+hyperparams: {"batch_size":2,"num_workers":5,"sliding_window":True}
+keep_missing: True
+
+classification_partition: ${classification_partition}
+partition: 1.0
+mono_strict: False
+
+train_transform:
+ - p: 0.0
+ - size: 300
+
+val_transform:
+ - p: 0.0
+ - size: 300
+
+test_transform:
+ - p: 0.0
+ - size: 300     
+
+
+name: PASTIS-HD
+global_batch_size: 2048
+num_classes: 18
+nb_split: 1
+sat_patch_size: 50
+
+train_dataset:
+  _partial_: true
+  _target_: data.Pastis.PASTIS
+  path: ${data_dir}
+  modalities: ${modalities}
+  transform: ${dataset.train_transform}
+  reference_date: "2018-09-01"
+  folds: [1, 2, 3]
+  nb_split: ${dataset.nb_split}
+
+val_dataset:
+  _partial_: true
+  _target_: data.Pastis.PASTIS
+  path: ${data_dir}
+  modalities: ${modalities}
+  transform: ${dataset.test_transform}
+  reference_date: "2018-09-01"
+  folds: [4]
+  nb_split: ${dataset.nb_split}
+
+test_dataset:
+  _partial_: true
+  _target_: data.Pastis.PASTIS
+  path: ${data_dir}
+  modalities: ${modalities}
+  transform: ${dataset.test_transform}
+  reference_date: "2018-09-01"
+  folds: [5]
+  nb_split: ${dataset.nb_split}

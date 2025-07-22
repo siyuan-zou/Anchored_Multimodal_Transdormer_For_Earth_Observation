@@ -1,0 +1,5 @@
+[2025-01-26 15:43:20,838][__main__][INFO] - start
+[2025-01-26 15:43:22,937][root][INFO] - Anchoring training
+[2025-01-26 15:51:32,179][root][INFO] - Contrastive training
+[2025-01-26 16:07:55,480][root][ERROR] - Error in testing: tuple index out of range
+[2025-01-26 16:08:03,963][__main__][INFO] - finished

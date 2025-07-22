@@ -1,0 +1,1 @@
+HYDRA_FULL_ERROR=1 python src/utils/preprocessing/video_features.py name=StressID_Dataset/train_video_features.txt
